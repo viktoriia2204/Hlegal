@@ -1,0 +1,14 @@
+$main-color: #333;
+$main-color2: #ba2121;
+$gray-bg: #F5F5FA;
+
+.container {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 24px;
+  @media screen and (min-width: 1024px) {
+    padding: 0 5px;
+  }
+}
+

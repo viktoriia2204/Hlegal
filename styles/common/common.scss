@@ -1,0 +1,191 @@
+$black: #000000;
+$white: #FFFFFF;
+$accent: #F0145A;
+$main: #323264;
+$main-alt: #46466E;
+$main-soft: #686887;
+$blue-regular: #24A3FF;
+$blue-hover: #0085FF;
+$blue-focus: #006CCF;
+$gray-text: #B3B3BA;
+$gray-bg: #F5F5FA;
+$gray-alt: #EDEDF7;
+$gray-separator: #E6E6F0;
+
+$hero-gradient: linear-gradient(90.13deg, #F0145A 0.84%, #EF8080 99.96%);
+$main-gradient: linear-gradient(128.63deg, #323264 0%, #323264 73.96%, #A54B5F 100%);
+$second-gradient: linear-gradient(42.01deg, #323264 14.33%, #323264 51.39%, #7A425E 87.53%);
+$gradient-red: linear-gradient(323.35deg, #F0145A 6.7%, #693264 70.36%);
+$gradient-super-soft: linear-gradient(228.57deg, #323264 11.93%, #323264 57.17%, #643E72 87.46%);
+
+body {
+  font-family: 'TT Norms', sans-serif;
+  font-size: 18px;
+  line-height: 1.44;
+  color: $black;
+}
+
+p {
+  font-size: 16px;
+}
+
+.hero {
+  font-size: 32px;
+  line-height: 38px;
+}
+
+h1{
+  font-size: 38px;
+  line-height: 46px;
+}
+
+h2 {
+  font-size: 22px;
+  line-height: 26px;
+}
+
+h3 {
+  font-size: 18px;
+  line-height: 21px;
+}
+
+h3.caps {
+  font-size: 14px;
+  line-height: 17px;
+}
+
+h4 {
+  font-size: 18px;
+  line-height: 21px;
+}
+
+.link {
+  font-size: 16px;
+  line-height: 20px;
+  color: $blue-regular;
+  transition: all 0.3s;
+
+  &:hover {
+    color: $accent;
+  }
+}
+
+.btn {
+  background: $blue-regular;
+  color: $white;
+  box-shadow: 0 0 20px rgba(36, 163, 255, 0.5);
+  border-radius: 12px;
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: 500;
+  width: 100%;
+  max-width: 250px;
+  text-align: center;
+  transition: all 0.3s;
+  padding: 16px 24px 17px;
+
+  &:hover {
+    box-shadow: 0 0 30px rgba(36, 163, 255, 0.5);
+    background: $blue-hover;
+  }
+
+  &:focus {
+    background: $blue-focus;
+  }
+}
+
+
+.container {
+  padding: 0 20px;
+}
+
+.logo {
+  color: $white;
+
+  &.main {
+    color: $main;
+  }
+}
+
+.flex {
+  display: flex;
+}
+
+.lang-buttons {
+  align-items: center;
+  gap: 4px;
+
+  button {
+    border-radius: 8px;
+    background: transparent;
+    padding: 5px 6px;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: center;
+    letter-spacing: 1px;
+    color: $white;
+
+    &.active {
+      background: $accent;
+    }
+  }
+
+
+}
+
+.slick-dots {
+  position: absolute;
+  list-style: none;
+  bottom: -36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 14px;
+
+  button, li {
+    font-size: 0;
+    width: 16px;
+    height: 16px;
+    background: transparent;
+  }
+
+  button:before {
+    display: block;
+    content: '';
+    opacity: 0.2;
+    background: $blue-regular;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    transition: all 0.3s;
+  }
+
+  li.slick-active button:before {
+    opacity: 1;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 1440px;
+    padding: 0 60px;
+    margin: 0 auto;
+  }
+  p {
+    font-size: 18px;
+  }
+  .hero {
+    font-size: 42px;
+    line-height: 50px;
+  }
+  h2 {
+    font-size: 32px;
+    line-height: 38px;
+  }
+  h3 {
+    font-size: 24px;
+    line-height: 28px;
+  }
+}
