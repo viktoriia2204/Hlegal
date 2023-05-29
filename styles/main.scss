@@ -17,6 +17,18 @@
     bottom: 0;
   }
 
+  a:hover{
+    transition: all 0.3s linear;
+    color: #F0145A;;
+  }
+
+  button:hover{
+    transition: all 0.3s linear;
+    font-size: 16px;
+    line-height: 16px;
+    box-shadow: 0 2px 5px #f8efef;
+  }
+
   .anchor-btn {
     position: absolute;
     bottom: 20px;
@@ -41,11 +53,13 @@
   }
 
   .logo{
+    position: absolute;
     margin-top: 54px;
     z-index: 16;
     width: 77px;
     height: 31px;
-    @media screen and (min-width: 940px){
+    @media (min-width: 940px){
+      position: relative;
       margin-top: 0;
       width: 155px;
       height: 62px;
@@ -64,28 +78,42 @@
   }
 
   .mobile{
-    opacity: 0;
-    @media screen and (min-width: 940px){
-      opacity: 1;
+    display: inline-block;
+    @media screen and (max-width: 940px){
+      display: none;
     }
   }
 
   header.flex {
     position: relative;
     justify-content: space-between;
-    align-items: center;
-    gap: 40px;
+    @media (min-width: 480px){
+      align-items: center;
+      gap: 40px;
+    }
+  }
+
+  b{
+    font-size: 14px;
+    line-height: 17px;
+    @media (min-width: 480px){
+      font-size: 16px;
+      line-height: 19px;
+    }
   }
 
   .nav {
     justify-content: flex-end;
-    gap: 15px;
     margin-top: 16px;
     align-items: center;
     font-size: 18px;
     line-height: 21px;
     text-align: right;
     color: common.$white;
+    @media (min-width: 480px){
+      gap: 15px;
+    }
+
   }
 
   .social-block {
@@ -95,10 +123,6 @@
       align-items: center;
       list-style-position: inside;
       gap: 10px;
-    }
-    @media screen and (min-width: 940px){
-      align-items: center;
-      gap: 13px;
     }
     }
 
@@ -187,7 +211,7 @@
   display: block;
   height: 40px;
   width: 32px;
-  right: 100px;
+  right: 0px;
   top: -34px;
   opacity: 0;
   z-index: 15;
@@ -226,7 +250,7 @@
   width: 32px;
   top: -26px;
   position: absolute;
-  right: 100px;
+  right: 0px;
   z-index: 12;
   display: flex;
   flex-direction: column;
@@ -247,6 +271,7 @@
   background: linear-gradient(228.57deg, #323264 11.93%, #323264 57.17%, #643E72 87.46%);
   border-radius: 0px 0px 12px 12px;
   padding-bottom: 62px;
+  position: relative;
   .top-block{
     display: flex;
     flex-direction: column;
@@ -302,7 +327,6 @@
       }
     }
   }
-
   .title-main{
     color: common.$accent;
     font-size: 42px;
@@ -312,29 +336,34 @@
     padding-bottom: 68px;
 
   }
-
   p{
     font-size: 21px;
     line-height: 30px;
     color: #FFFFFF;
-    .link{
-      font-size: 14px;
-      line-height: 17px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      color: #FFFFFF;
-      opacity: 0.5;
-      padding-top: 82px;
+  }
+  .link {
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    opacity: 0.5;
+    padding-top: 82px;
+    @media screen and (max-width: 768px) {
+      padding-top: 45px;
     }
   }
-
   .block-main{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 40px;
+    @media screen and (max-width: 768px) {
+      grid-template-columns: none;
+    }
     .item-main{
       max-width: 413px;
       min-width: 300px;
+
       h3{
         padding-bottom: 15px;
         padding-top: 20px;
@@ -348,6 +377,49 @@
         line-height: 26px;
         color: #FFFFFF;
       }
+    }
+    .item-main-mini {
+      padding-bottom: 10px;
+      display: flex;
+      justify-content: flex-start;
+      gap: 10px;
+      @media (min-width: 768px){
+        padding-bottom: 0;
+        display: inherit;
+      }
+      h3{
+        display: block;
+        align-items: center;
+        @media (min-width: 768px){
+          display: inherit;
+          align-items: inherit;
+      }
+      }
+    }
+  }
+  .line-fone{
+    position: absolute;
+    bottom: -10px;
+    height: 10px;
+    left: 0;
+    right: 0;
+    width: calc(100% - 40px);
+    margin: 0 auto;
+    background: #CACADB;
+    border-radius: 0px 0px 12px 12px;
+
+    &:after{
+      content: '';
+      height: 10px;
+      left: 0;
+      background: #E7E7F2;
+      border-radius: 0px 0px 12px 12px;
+      position: absolute;
+      bottom: -10px;
+      right: 0;
+      margin: 0 auto;
+      display: block;
+      width: calc(100% - 40px);
     }
   }
 }
@@ -427,6 +499,10 @@
   .cases-block{
     display: grid;
     grid-template-columns: repeat(3, minmax(320px, 1fr));
+    @media screen and (max-width: 1200px){
+      display: flex;
+      flex-direction: column;
+    }
     >div{
       display: flex;
       flex-direction: column;
@@ -469,7 +545,11 @@
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 120px 120px 120px 120px ;
+    grid-template-rows: 120px 120px 120px 120px;
+    @media screen and (max-width: 768px){
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 120px 120px ;
+    }
   }
 
   h3{
@@ -496,10 +576,20 @@
 }
 
 #articles{
+  background: #F5F5FA;
   padding: 0 40px;
   max-height: 80vh;
   overflow-y: hidden;
   position: relative;
+  @media screen and (max-width: 768px){
+    max-height: 100%;
+  }
+  .mobile{
+    @media screen and (max-width: 768px){
+      display: none;
+    }
+
+  }
   &:after {
     background: linear-gradient(180deg, rgba(245, 245, 250, 0) 0%, #F5F5FA 86.5%);
     width: 100%;
@@ -508,6 +598,9 @@
     position: absolute;
     z-index: 1;
     bottom: -5px;
+    @media screen and (max-width: 768px){
+      z-index: -1;
+    }
   }
   .link{
     font-size: 14px;
@@ -532,11 +625,22 @@
     grid-template-columns: repeat(3, 413px);
     grid-gap: 20px;
     align-items: flex-start;
+    @media screen and (max-width: 768px){
+      grid-template-columns: 1fr;
+      grid-template-rows: 120px;
+      align-items: center;
+    }
 
     .block {
-      padding: 20px;
+      padding-bottom: 20px;
       background: common.$white;
       border-radius: 10px;
+    }
+    .no-img{
+      padding: 20px 20px 0 20px;
+    }
+    img{
+      width: 100%;
     }
 
     .block:nth-child(2) {
@@ -555,13 +659,13 @@
       grid-row: span 5;
     }
   }
-
   h4{
     font-weight: 400;
     font-size: 18px;
     line-height: 21px;
     color: #24A3FF;
     padding-bottom: 10px;
+    padding-top: 20px;
   }
   .date{
     font-size: 12px;
@@ -575,6 +679,11 @@
     border: 4px solid #E6E6F0;
     margin-bottom: 20px;
     height: 1px;
+    @media screen and (max-width: 768px){
+      margin-bottom: 0;
+      height: 0;
+      border: 0;
+    }
   }
   p{
     font-weight: 400;
@@ -582,26 +691,58 @@
     line-height: 22px;
     color: #000000;
   }
+  .text{
+    @media screen and (max-width: 768px){
+      display: none;
+    }
+  }
+  button{
+    background: #24A3FF;
+    box-shadow: 0px 0px 20px rgba(36, 163, 255, 0.5);
+    border-radius: 12px;
+    width: 250px;
+    height: 50px;
+    align-items: center;
+    text-align: center;
+    margin: 40px auto;
+    display: block;
+    line-height: 17px;
+    color: #FFFFFF;
+    @media screen and (min-width: 768px){
+      display: none;
+    }
+  }
 }
 
 footer{
   padding-top: 30px;
   background: #F5F5FA;
+  position: relative;
   .flex{
     display: flex;
     justify-content: space-between;
     margin: 0 70px;
+    @media screen and (max-width: 1020px){
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      gap: 20px;
+    }
+  }
+
+  .facebook-link {
+    width: 24px;
+    height: 24px;
+    position: relative;
+    top: 3px;
+    @media (max-width: 1020px){
+      width: 38px;
+      height: 38px;
+    }
   }
   .social-block {
     align-items: center;
     gap: 13px;
-
-    .facebook-link {
-      width: 24px;
-      height: 24px;
-      position: relative;
-      top: 3px;
-    }
 
     &__list {
       color: common.$main;
@@ -628,6 +769,13 @@ footer{
     justify-content: left;
     margin: 0 70px;
     padding-top: 30px;
+    @media screen and (max-width: 1020px){
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      gap: 20px;
+      padding-bottom: 118px ;
+    }
   }
   li{
    list-style-type: none;
@@ -642,7 +790,11 @@ footer{
     position: absolute;
     top: 10px;
     right: -12px;
+    @media screen and (max-width: 1020px){
+      display: none;
+    }
   }
+
 
 
 }

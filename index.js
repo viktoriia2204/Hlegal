@@ -4,7 +4,7 @@ $(document).ready(function(){
   $(".anchor").on("click", function (event) {
     event.preventDefault();
     const id = $(this).attr('href'),
-      top = $(id).offset().top;
+        top = $(id).offset().top;
     $('body,html').animate({ scrollTop: top }, 800);
   });
 
@@ -17,4 +17,6 @@ $(document).ready(function(){
     slidesToScroll: 1,
   });
 });
+
+
 

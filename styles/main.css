@@ -174,6 +174,16 @@ h4 {
   z-index: 1;
   bottom: 0;
 }
+.first-section a:hover {
+  transition: all 0.3s linear;
+  color: #F0145A;
+}
+.first-section button:hover {
+  transition: all 0.3s linear;
+  font-size: 16px;
+  line-height: 16px;
+  box-shadow: 0 2px 5px #f8efef;
+}
 .first-section .anchor-btn {
   position: absolute;
   bottom: 20px;
@@ -196,13 +206,15 @@ h4 {
   background: linear-gradient(42.01deg, #323264 14.33%, #323264 51.39%, #7A425E 87.53%);
 }
 .first-section .logo {
+  position: absolute;
   margin-top: 54px;
   z-index: 16;
   width: 77px;
   height: 31px;
 }
-@media screen and (min-width: 940px) {
+@media (min-width: 940px) {
   .first-section .logo {
+    position: relative;
     margin-top: 0;
     width: 155px;
     height: 62px;
@@ -220,28 +232,46 @@ h4 {
   color: #FFFFFF;
 }
 .first-section .mobile {
-  opacity: 0;
+  display: inline-block;
 }
-@media screen and (min-width: 940px) {
+@media screen and (max-width: 940px) {
   .first-section .mobile {
-    opacity: 1;
+    display: none;
   }
 }
 .first-section header.flex {
   position: relative;
   justify-content: space-between;
-  align-items: center;
-  gap: 40px;
+}
+@media (min-width: 480px) {
+  .first-section header.flex {
+    align-items: center;
+    gap: 40px;
+  }
+}
+.first-section b {
+  font-size: 14px;
+  line-height: 17px;
+}
+@media (min-width: 480px) {
+  .first-section b {
+    font-size: 16px;
+    line-height: 19px;
+  }
 }
 .first-section .nav {
   justify-content: flex-end;
-  gap: 15px;
   margin-top: 16px;
   align-items: center;
   font-size: 18px;
   line-height: 21px;
   text-align: right;
   color: #FFFFFF;
+}
+@media (min-width: 480px) {
+  .first-section .nav {
+    gap: 15px;
+  }
 }
 .first-section .social-block {
   justify-content: space-between;
@@ -251,12 +281,6 @@ h4 {
   align-items: center;
   list-style-position: inside;
   gap: 10px;
-}
-@media screen and (min-width: 940px) {
-  .first-section .social-block {
-    align-items: center;
-    gap: 13px;
-  }
 }
 .first-section .facebook-link {
   width: 24px;
@@ -348,7 +372,7 @@ h1 {
   display: block;
   height: 40px;
   width: 32px;
-  right: 100px;
+  right: 0px;
   top: -34px;
   opacity: 0;
   z-index: 15;
@@ -388,7 +412,7 @@ h1 {
   width: 32px;
   top: -26px;
   position: absolute;
-  right: 100px;
+  right: 0px;
   z-index: 12;
   display: flex;
   flex-direction: column;
@@ -411,6 +435,7 @@ h1 {
   background: linear-gradient(228.57deg, #323264 11.93%, #323264 57.17%, #643E72 87.46%);
   border-radius: 0px 0px 12px 12px;
   padding-bottom: 62px;
+  position: relative;
 }
 .second-section .top-block {
   display: flex;
@@ -486,7 +511,7 @@ h1 {
   line-height: 30px;
   color: #FFFFFF;
 }
-.second-section p .link {
+.second-section .link {
   font-size: 14px;
   line-height: 17px;
   letter-spacing: 1px;
@@ -495,10 +520,20 @@ h1 {
   opacity: 0.5;
   padding-top: 82px;
 }
+@media screen and (max-width: 768px) {
+  .second-section .link {
+    padding-top: 45px;
+  }
+}
 .second-section .block-main {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 40px;
+}
+@media screen and (max-width: 768px) {
+  .second-section .block-main {
+    grid-template-columns: none;
+  }
 }
 .second-section .block-main .item-main {
   max-width: 413px;
@@ -516,6 +551,52 @@ h1 {
   font-size: 18px;
   line-height: 26px;
   color: #FFFFFF;
+}
+.second-section .block-main .item-main-mini {
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+}
+@media (min-width: 768px) {
+  .second-section .block-main .item-main-mini {
+    padding-bottom: 0;
+    display: inherit;
+  }
+}
+.second-section .block-main .item-main-mini h3 {
+  display: block;
+  align-items: center;
+}
+@media (min-width: 768px) {
+  .second-section .block-main .item-main-mini h3 {
+    display: inherit;
+    align-items: inherit;
+  }
+}
+.second-section .line-fone {
+  position: absolute;
+  bottom: -10px;
+  height: 10px;
+  left: 0;
+  right: 0;
+  width: calc(100% - 40px);
+  margin: 0 auto;
+  background: #CACADB;
+  border-radius: 0px 0px 12px 12px;
+}
+.second-section .line-fone:after {
+  content: "";
+  height: 10px;
+  left: 0;
+  background: #E7E7F2;
+  border-radius: 0px 0px 12px 12px;
+  position: absolute;
+  bottom: -10px;
+  right: 0;
+  margin: 0 auto;
+  display: block;
+  width: calc(100% - 40px);
 }
 
 .slider-section {
@@ -592,6 +673,12 @@ h1 {
   display: grid;
   grid-template-columns: repeat(3, minmax(320px, 1fr));
 }
+@media screen and (max-width: 1200px) {
+  .cases .cases-block {
+    display: flex;
+    flex-direction: column;
+  }
+}
 .cases .cases-block > div {
   display: flex;
   flex-direction: column;
@@ -633,6 +720,12 @@ h1 {
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 120px 120px 120px 120px;
 }
+@media screen and (max-width: 768px) {
+  .trust .wrapper {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 120px 120px;
+  }
+}
 .trust h3 {
   padding-top: 60px;
   padding-bottom: 30px;
@@ -654,10 +747,21 @@ h1 {
 }
 
 #articles {
+  background: #F5F5FA;
   padding: 0 40px;
   max-height: 80vh;
   overflow-y: hidden;
   position: relative;
+}
+@media screen and (max-width: 768px) {
+  #articles {
+    max-height: 100%;
+  }
+}
+@media screen and (max-width: 768px) {
+  #articles .mobile {
+    display: none;
+  }
 }
 #articles:after {
   background: linear-gradient(180deg, rgba(245, 245, 250, 0) 0%, #F5F5FA 86.5%);
@@ -667,6 +771,11 @@ h1 {
   position: absolute;
   z-index: 1;
   bottom: -5px;
+}
+@media screen and (max-width: 768px) {
+  #articles:after {
+    z-index: -1;
+  }
 }
 #articles .link {
   font-size: 14px;
@@ -693,10 +802,23 @@ h1 {
   grid-gap: 20px;
   align-items: flex-start;
 }
+@media screen and (max-width: 768px) {
+  #articles .grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 120px;
+    align-items: center;
+  }
+}
 #articles .grid .block {
-  padding: 20px;
+  padding-bottom: 20px;
   background: #FFFFFF;
   border-radius: 10px;
+}
+#articles .grid .no-img {
+  padding: 20px 20px 0 20px;
+}
+#articles .grid img {
+  width: 100%;
 }
 #articles .grid .block:nth-child(2) {
   grid-row: span 2;
@@ -716,6 +838,7 @@ h1 {
   line-height: 21px;
   color: #24A3FF;
   padding-bottom: 10px;
+  padding-top: 20px;
 }
 #articles .date {
   font-size: 12px;
@@ -730,31 +853,76 @@ h1 {
   margin-bottom: 20px;
   height: 1px;
 }
+@media screen and (max-width: 768px) {
+  #articles .line {
+    margin-bottom: 0;
+    height: 0;
+    border: 0;
+  }
+}
 #articles p {
   font-weight: 400;
   font-size: 16px;
   line-height: 22px;
   color: #000000;
 }
+@media screen and (max-width: 768px) {
+  #articles .text {
+    display: none;
+  }
+}
+#articles button {
+  background: #24A3FF;
+  box-shadow: 0px 0px 20px rgba(36, 163, 255, 0.5);
+  border-radius: 12px;
+  width: 250px;
+  height: 50px;
+  align-items: center;
+  text-align: center;
+  margin: 40px auto;
+  display: block;
+  line-height: 17px;
+  color: #FFFFFF;
+}
+@media screen and (min-width: 768px) {
+  #articles button {
+    display: none;
+  }
+}
 
 footer {
   padding-top: 30px;
   background: #F5F5FA;
+  position: relative;
 }
 footer .flex {
   display: flex;
   justify-content: space-between;
   margin: 0 70px;
 }
-footer .social-block {
-  align-items: center;
-  gap: 13px;
+@media screen and (max-width: 1020px) {
+  footer .flex {
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
 }
-footer .social-block .facebook-link {
+footer .facebook-link {
   width: 24px;
   height: 24px;
   position: relative;
   top: 3px;
+}
+@media (max-width: 1020px) {
+  footer .facebook-link {
+    width: 38px;
+    height: 38px;
+  }
+}
+footer .social-block {
+  align-items: center;
+  gap: 13px;
 }
 footer .social-block__list {
   color: #323264;
@@ -781,6 +949,15 @@ footer .contact {
   margin: 0 70px;
   padding-top: 30px;
 }
+@media screen and (max-width: 1020px) {
+  footer .contact {
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+    padding-bottom: 118px;
+  }
+}
 footer li {
   list-style-type: none;
   position: relative;
@@ -794,6 +971,11 @@ footer .marker:after {
   position: absolute;
   top: 10px;
   right: -12px;
+}
+@media screen and (max-width: 1020px) {
+  footer .marker:after {
+    display: none;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
