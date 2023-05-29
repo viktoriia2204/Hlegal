@@ -301,6 +301,10 @@
     color: #FFFFFF;
     padding-bottom: 10px;
   }
+  li:hover{
+    color: #f0145a
+    transition: all 0.3s linear;
+  }
   li::marker{
     color: #f0145a;
   }

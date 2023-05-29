@@ -473,6 +473,9 @@ h4 {
   color: #FFFFFF;
   padding-bottom: 10px;
 }
+.sec2 li:hover {
+  color: #f0145a;
+}
 .sec2 li::marker {
   color: #f0145a;
 }

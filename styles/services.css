@@ -404,6 +404,9 @@ header .burger-wrapper input[type=checkbox]:checked ~ .burger-list {
   line-height: 26px;
   color: #FFFFFF;
 }
+.sec1 .block-main img:hover {
+  box-shadow: 11px 12px 8px #f8efef;
+}
 .sec1 .item-main-mini {
   padding-bottom: 10px;
   display: flex;

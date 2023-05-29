@@ -228,7 +228,12 @@ header{
     right: -240px;
   }
 }
-
+.sign:hover{
+  color: #24a3ff;
+  transition: all 0.3s linear;
+  background: #24a3ff ;
+  border-radius: 50%;
+}
   .cards{
     display: grid;
     grid-gap: 20px;

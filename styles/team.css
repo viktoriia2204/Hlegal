@@ -396,6 +396,12 @@ header .burger-wrapper input[type=checkbox]:checked ~ .burger-list {
     right: -240px;
   }
 }
+.sec1 .sign:hover {
+  color: #24a3ff;
+  transition: all 0.3s linear;
+  background: #24a3ff;
+  border-radius: 50%;
+}
 .sec1 .cards {
   display: grid;
   grid-gap: 20px;
